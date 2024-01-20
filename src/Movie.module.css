@@ -1,0 +1,43 @@
+.movie {
+  --poster-height: 400px;
+  --video-preview-width: calc(var(--poster-height) / 9 * 16);
+  display: flex;
+  height: var(--poster-height);
+  position: relative;
+  width: calc(var(--poster-height) * 0.675);
+  overflow: hidden;
+  transition: width 200ms;
+}
+
+.movie.videoPreview {
+  width: var(--video-preview-width);
+}
+
+.video {
+  display: none;
+  height: 100%;
+  transition: height 200ms width 200ms;
+  width: var(--video-preview-width);
+}
+
+.videoFullview {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+
+.videoOver {
+  display: block;
+}
+
+.poster {
+  display: block;
+  max-height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.posterOver {
+  display: none;
+}
